@@ -1,6 +1,8 @@
 {
   "name": "cute-ninja/common-bundle",
+  "type": "symfony-bundle",
   "description": "Common code for Cute-Ninja projects (API handler, etc)",
+  "homepage": "https://github.com/Cute-Ninja/common-bundle",
   "keywords": [
     "api",
     "common"
@@ -24,6 +26,7 @@
     "jms/serializer-bundle": "1.0.*",
     "friendsofsymfony/rest-bundle": "1.7.*",
     "knplabs/knp-paginator-bundle": "2.5.*",
+
     "cute-ninja/common-bundle": "dev-master"
   },
   "require-dev": {
