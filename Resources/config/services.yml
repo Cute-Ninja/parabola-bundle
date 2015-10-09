@@ -1,10 +1,10 @@
 services:
-    hot.response_builder.success:
-        class: HOT\Bundle\CommonBundle\HttpResponse\SuccessResponseBuilder
+    cute_ninja.response_builder.success:
+        class: CuteNinja\CommonBundle\HttpResponse\SuccessResponseBuilder
         arguments: [@fos_rest.view_handler]
-    hot.response_builder.client_error:
-        class: HOT\Bundle\CommonBundle\HttpResponse\ClientErrorResponseBuilder
+    cute_ninja.response_builder.client_error:
+        class: CuteNinja\CommonBundle\HttpResponse\ClientErrorResponseBuilder
         arguments: [@fos_rest.view_handler]
-    hot.response_builder.server_error:
-        class: HOT\Bundle\CommonBundle\HttpResponse\ServerErrorResponseBuilder
+    cute_ninja.response_builder.server_error:
+        class: CuteNinja\CommonBundle\HttpResponse\ServerErrorResponseBuilder
         arguments: [@fos_rest.view_handler]
