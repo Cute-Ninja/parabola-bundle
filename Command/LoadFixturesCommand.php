@@ -7,7 +7,6 @@ use Doctrine\ORM\Tools\SchemaTool;
 use h4cc\AliceFixturesBundle\Fixtures\FixtureManager;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -23,7 +22,7 @@ class LoadFixturesCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('hot:fixture:load')
+            ->setName('cute_ninja:fixture:load')
             ->setDescription('Load data fixture for the current environment');
     }
 

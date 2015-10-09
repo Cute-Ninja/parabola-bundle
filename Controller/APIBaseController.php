@@ -25,7 +25,7 @@ abstract class APIBaseController extends FOSRestController implements APIControl
      */
     protected function getSuccessResponseBuilder()
     {
-        return $this->container->get('hot.response_builder.success');
+        return $this->container->get('cute_ninja.response_builder.success');
     }
 
     /**
@@ -33,7 +33,7 @@ abstract class APIBaseController extends FOSRestController implements APIControl
      */
     protected function getClientErrorResponseBuilder()
     {
-        return $this->container->get('hot.response_builder.client_error');
+        return $this->container->get('cute_ninja.response_builder.client_error');
     }
 
     /**
@@ -41,7 +41,7 @@ abstract class APIBaseController extends FOSRestController implements APIControl
      */
     protected function getServerErrorResponseBuilder()
     {
-        return $this->container->get('hot.response_builder.server_error');
+        return $this->container->get('cute_ninja.response_builder.server_error');
     }
 
     /**
