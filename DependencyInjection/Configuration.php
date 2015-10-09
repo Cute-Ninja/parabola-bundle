@@ -22,9 +22,18 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->arrayNode('fixtures_files')
-                    ->addDefaultsIfNotSet()
-                ->end();
+                ->scalarNode('base_dir')
+                ->end()
+                ->arrayNode('fixtures')
+                    ->prototype('array')
+                        ->children()
+                            ->scalarNode('resource')
+                                ->isRequired(true)
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }

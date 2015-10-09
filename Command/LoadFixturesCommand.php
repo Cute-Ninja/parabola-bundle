@@ -40,7 +40,7 @@ class LoadFixturesCommand extends ContainerAwareCommand
         }
 
         $manager  = $this->getFixtureManager();
-        $fixtures = $manager->loadFiles($this->getContainer()->getParameter('fixtures_files'));
+        $fixtures = $manager->loadFiles($this->getFixturesFiles());
 
         $manager->persist($fixtures);
     }
@@ -59,5 +59,19 @@ class LoadFixturesCommand extends ContainerAwareCommand
     private function getFixtureManager()
     {
         return $this->getContainer()->get('h4cc_alice_fixtures.manager');
+    }
+
+    /**
+     * @return array
+     */
+    private function getFixturesFiles()
+    {
+        $baseDir = $this->getContainer()->getParameter('base_dir');
+        $files = array();
+        foreach($this->getContainer()->getParameter('fixtures') as $fixture) {
+            $files[] = $baseDir . $fixture['resource'];
+        }
+
+        return $files;
     }
 }
