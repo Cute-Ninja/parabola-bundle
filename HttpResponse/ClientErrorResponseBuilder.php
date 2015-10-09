@@ -1,6 +1,6 @@
 <?php
 
-namespace CuteNinja\Bundle\CommonBundle\HttpResponse;
+namespace CuteNinja\CommonBundle\HttpResponse;
 
 use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\View\ViewHandler;
@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Router;
 /**
  * Class ClientErrorResponseBuilder
  *
- * @package CuteNinja\Bundle\CommonBundle\HttpResponse
+ * @package CuteNinja\CommonBundle\HttpResponse
  */
 class ClientErrorResponseBuilder extends AbstractResponseBuilder
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace CuteNinja\Bundle\CommonBundle\Tests\Feature\Context\Traits;
+namespace CuteNinja\CommonBundle\Tests\Feature\Context\Traits;
 
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 /**
  * Class UtilsTrait
  *
- * @package CuteNinja\Bundle\CommonBundle\Tests\Feature\Context\Traits
+ * @package CuteNinja\CommonBundle\Tests\Feature\Context\Traits
  */
 trait UtilsTrait
 {

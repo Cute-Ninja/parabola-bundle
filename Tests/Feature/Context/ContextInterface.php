@@ -1,11 +1,11 @@
 <?php
 
-namespace CuteNinja\Bundle\CommonBundle\Tests\Feature\Context;
+namespace CuteNinja\CommonBundle\Tests\Feature\Context;
 
 /**
  * Interface ContextInterface
  *
- * @package CuteNinja\Bundle\CommonBundle\Tests\Feature\Context
+ * @package CuteNinja\CommonBundle\Tests\Feature\Context
  */
 interface ContextInterface
 {

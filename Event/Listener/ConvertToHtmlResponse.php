@@ -1,12 +1,12 @@
 <?php
-namespace CuteNinja\Bundle\CommonBundle\Event\Listener;
+namespace CuteNinja\CommonBundle\Event\Listener;
 
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
 /**
  * Class ConvertToHtmlResponse
  *
- * @package CuteNinja\Bundle\CommonBundle\Event\Listener
+ * @package CuteNinja\CommonBundle\Event\Listener
  */
 class ConvertToHtmlResponse
 {

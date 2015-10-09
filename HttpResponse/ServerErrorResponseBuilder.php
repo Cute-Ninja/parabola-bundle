@@ -1,6 +1,6 @@
 <?php
 
-namespace CuteNinja\Bundle\CommonBundle\HttpResponse;
+namespace CuteNinja\CommonBundle\HttpResponse;
 
 use Exception;
 use FOS\RestBundle\Util\Codes;
@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Router;
 /**
  * Class ServerErrorResponseBuilder
  *
- * @package CuteNinja\Bundle\CommonBundle\HttpResponse
+ * @package CuteNinja\CommonBundle\HttpResponse
  */
 class ServerErrorResponseBuilder extends AbstractResponseBuilder
 {

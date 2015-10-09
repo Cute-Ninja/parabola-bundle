@@ -1,6 +1,6 @@
 <?php
 
-namespace CuteNinja\Bundle\CommonBundle\HttpResponse;
+namespace CuteNinja\CommonBundle\HttpResponse;
 
 use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\View\View;
@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Router;
 /**
  * Class SuccessResponseBuilder
  *
- * @package CuteNinja\Bundle\CommonBundle\HttpResponse
+ * @package CuteNinja\CommonBundle\HttpResponse
  */
 class SuccessResponseBuilder extends AbstractResponseBuilder
 {

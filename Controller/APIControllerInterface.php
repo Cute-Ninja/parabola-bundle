@@ -1,6 +1,6 @@
 <?php
 
-namespace CuteNinja\Bundle\CommonBundle\Controller;
+namespace CuteNinja\CommonBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Interface BaseControllerInterface
  *
- * @package CuteNinja\Bundle\CommonBundle\Controller
+ * @package CuteNinja\CommonBundle\Controller
  */
 interface APIControllerInterface
 {

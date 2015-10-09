@@ -1,6 +1,6 @@
 <?php
 
-namespace CuteNinja\Bundle\CommonBundle\Command;
+namespace CuteNinja\CommonBundle\Command;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\SchemaTool;
@@ -12,7 +12,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Class LoadFixturesCommand
  *
- * @package CuteNinja\Bundle\CommonBundle\Command
+ * @package CuteNinja\CommonBundle\Command
  */
 class LoadFixturesCommand extends ContainerAwareCommand
 {

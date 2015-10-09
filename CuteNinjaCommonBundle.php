@@ -1,6 +1,6 @@
 <?php
 
-namespace CuteNinja\Bundle\CommonBundle;
+namespace CuteNinja\CommonBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
