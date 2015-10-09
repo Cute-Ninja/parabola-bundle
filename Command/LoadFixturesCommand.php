@@ -40,7 +40,7 @@ class LoadFixturesCommand extends ContainerAwareCommand
         }
 
         $manager  = $this->getFixtureManager();
-        $fixtures = $manager->loadFiles($this->getFixturesFiles());
+        $fixtures = $manager->loadFiles($this->getContainer()->getParameter('fixtures_files'));
 
         $manager->persist($fixtures);
     }
@@ -59,23 +59,5 @@ class LoadFixturesCommand extends ContainerAwareCommand
     private function getFixtureManager()
     {
         return $this->getContainer()->get('h4cc_alice_fixtures.manager');
-    }
-
-    /**
-     * @return array
-     */
-    private function getFixturesFiles()
-    {
-        $baseDir = $this->getContainer()->get('kernel')->getRootDir() . '/../src/CuteNinja/Bundle/';
-
-        return array(
-            $baseDir . 'RealmBundle/Resources/DataFixture/factions.yml',
-            $baseDir . 'RealmBundle/Resources/DataFixture/locations.yml',
-
-            $baseDir . 'UserBundle/Resources/DataFixture/users.yml',
-            $baseDir . 'CharacterBundle/Resources/DataFixture/characterClasses.yml',
-            $baseDir . 'CharacterBundle/Resources/DataFixture/characters.yml',
-            $baseDir . 'CharacterBundle/Resources/DataFixture/characterHasCharacterClasses.yml',
-        );
     }
 }

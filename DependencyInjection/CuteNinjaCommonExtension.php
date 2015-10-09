@@ -22,6 +22,10 @@ class CuteNinjaCommonExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+        if(!empty($config['fixtures_files'])) {
+            $container->setParameter('fixtures_files', $config['fixtures_files']);
+        }
+
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
