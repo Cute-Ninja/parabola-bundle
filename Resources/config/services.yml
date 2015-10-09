@@ -1,0 +1,10 @@
+services:
+    hot.response_builder.success:
+        class: HOT\Bundle\CommonBundle\HttpResponse\SuccessResponseBuilder
+        arguments: [@fos_rest.view_handler]
+    hot.response_builder.client_error:
+        class: HOT\Bundle\CommonBundle\HttpResponse\ClientErrorResponseBuilder
+        arguments: [@fos_rest.view_handler]
+    hot.response_builder.server_error:
+        class: HOT\Bundle\CommonBundle\HttpResponse\ServerErrorResponseBuilder
+        arguments: [@fos_rest.view_handler]
