@@ -1,11 +1,11 @@
 <?php
 
-namespace HOT\Bundle\CommonBundle\Tests\Feature\SerializationSchema;
+namespace CuteNinja\Bundle\CommonBundle\Tests\Feature\SerializationSchema;
 
 /**
  * Interface SerializationSchemaInterface
  *
- * @package HOT\Bundle\CommonBundle\Tests\Feature\SerializationSchema
+ * @package CuteNinja\Bundle\CommonBundle\Tests\Feature\SerializationSchema
  */
 interface SerializationSchemaInterface
 {

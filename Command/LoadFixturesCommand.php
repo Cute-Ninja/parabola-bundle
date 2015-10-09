@@ -1,6 +1,6 @@
 <?php
 
-namespace HOT\Bundle\CommonBundle\Command;
+namespace CuteNinja\Bundle\CommonBundle\Command;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\SchemaTool;
@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Class LoadFixturesCommand
  *
- * @package HOT\Bundle\CommonBundle\Command
+ * @package CuteNinja\Bundle\CommonBundle\Command
  */
 class LoadFixturesCommand extends ContainerAwareCommand
 {
@@ -67,7 +67,7 @@ class LoadFixturesCommand extends ContainerAwareCommand
      */
     private function getFixturesFiles()
     {
-        $baseDir = $this->getContainer()->get('kernel')->getRootDir() . '/../src/HOT/Bundle/';
+        $baseDir = $this->getContainer()->get('kernel')->getRootDir() . '/../src/CuteNinja/Bundle/';
 
         return array(
             $baseDir . 'RealmBundle/Resources/DataFixture/factions.yml',

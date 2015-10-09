@@ -1,2 +1,4 @@
+/vendor/
+/web/bundles/
 /behat.yml
 .idea/

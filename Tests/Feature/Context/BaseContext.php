@@ -1,22 +1,22 @@
 <?php
 
-namespace HOT\Bundle\CommonBundle\Tests\Feature\Context;
+namespace CuteNinja\Bundle\CommonBundle\Tests\Feature\Context;
 
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Symfony2Extension\Context\KernelAwareContext;
 use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
-use HOT\Bundle\CommonBundle\Tests\Feature\Context\Traits\FixturesTrait;
-use HOT\Bundle\CommonBundle\Tests\Feature\Context\Traits\UtilsTrait;
-use HOT\Bundle\CommonBundle\Tests\Feature\Context\Traits\GivenTrait;
-use HOT\Bundle\CommonBundle\Tests\Feature\Context\Traits\ThenTrait;
+use CuteNinja\Bundle\CommonBundle\Tests\Feature\Context\Traits\FixturesTrait;
+use CuteNinja\Bundle\CommonBundle\Tests\Feature\Context\Traits\UtilsTrait;
+use CuteNinja\Bundle\CommonBundle\Tests\Feature\Context\Traits\GivenTrait;
+use CuteNinja\Bundle\CommonBundle\Tests\Feature\Context\Traits\ThenTrait;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 /**
  * Class BaseContext
  *
- * @package HOT\Bundle\CommonBundle\Tests\Feature\Context
+ * @package CuteNinja\Bundle\CommonBundle\Tests\Feature\Context
  */
 abstract class BaseContext extends WebTestCase implements ContextInterface, SnippetAcceptingContext, KernelAwareContext
 {

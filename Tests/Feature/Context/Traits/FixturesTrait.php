@@ -1,13 +1,13 @@
 <?php
 
-namespace HOT\Bundle\CommonBundle\Tests\Feature\Context\Traits;
+namespace CuteNinja\Bundle\CommonBundle\Tests\Feature\Context\Traits;
 
 use Symfony\Component\Process\Process;
 
 /**
  * Class FixturesTrait
  *
- * @package HOT\Bundle\CommonBundle\Tests\Feature\Context\Traits
+ * @package CuteNinja\Bundle\CommonBundle\Tests\Feature\Context\Traits
  */
 trait FixturesTrait
 {

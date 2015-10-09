@@ -1,9 +1,9 @@
 <?php
 
-namespace HOT\Bundle\CommonBundle;
+namespace CuteNinja\Bundle\CommonBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class HOTCommonBundle extends Bundle
+class CuteNinjaCommonBundle extends Bundle
 {
 }

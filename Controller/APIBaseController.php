@@ -1,11 +1,11 @@
 <?php
 
-namespace HOT\Bundle\CommonBundle\Controller;
+namespace CuteNinja\Bundle\CommonBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
-use HOT\Bundle\CommonBundle\HttpResponse\ClientErrorResponseBuilder;
-use HOT\Bundle\CommonBundle\HttpResponse\ServerErrorResponseBuilder;
-use HOT\Bundle\CommonBundle\HttpResponse\SuccessResponseBuilder;
+use CuteNinja\Bundle\CommonBundle\HttpResponse\ClientErrorResponseBuilder;
+use CuteNinja\Bundle\CommonBundle\HttpResponse\ServerErrorResponseBuilder;
+use CuteNinja\Bundle\CommonBundle\HttpResponse\SuccessResponseBuilder;
 use Knp\Component\Pager\Paginator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Router;
@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Router;
 /**
  * Class APIBaseController
  *
- * @package HOT\Bundle\CommonBundle\Controller
+ * @package CuteNinja\Bundle\CommonBundle\Controller
  */
 abstract class APIBaseController extends FOSRestController implements APIControllerInterface
 {

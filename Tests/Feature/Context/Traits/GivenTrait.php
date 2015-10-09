@@ -1,11 +1,11 @@
 <?php
 
-namespace HOT\Bundle\CommonBundle\Tests\Feature\Context\Traits;
+namespace CuteNinja\Bundle\CommonBundle\Tests\Feature\Context\Traits;
 
 /**
  * Class GivenTrait
  *
- * @package HOT\Bundle\CommonBundle\Tests\Feature\Context\Traits
+ * @package CuteNinja\Bundle\CommonBundle\Tests\Feature\Context\Traits
  */
 trait GivenTrait
 {
