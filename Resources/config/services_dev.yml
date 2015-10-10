@@ -1,0 +1,6 @@
+services:
+    cute_ninja.listener.kernel.convert_html:
+        class: CuteNinja\CommonBundle\Event\Listener\ConvertToHtmlResponse
+        arguments: [%wrap_api_response%]
+        tags:
+        - { name: kernel.event_listener, event: kernel.response }
