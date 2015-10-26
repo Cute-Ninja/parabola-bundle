@@ -24,8 +24,8 @@ trait FixturesTrait
         $process = new Process("php app/console doctrine:schema:create --env=test");
         $process->run();
 
-        $process = new Process("php app/console cute_ninja:fixture:load --env=test");
-        $process->run();
+        /*$process = new Process("php app/console cute_ninja:fixture:load --env=test");
+        $process->run();*/
     }
 
     /**
