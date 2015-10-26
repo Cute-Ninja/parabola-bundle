@@ -25,17 +25,17 @@
     "incenteev/composer-parameter-handler": "~2.0",
     "jms/serializer-bundle": "1.0.*",
     "friendsofsymfony/rest-bundle": "1.7.*",
+    "nelmio/api-doc-bundle": "2.9.*",
     "knplabs/knp-paginator-bundle": "2.5.*",
 
-
+    "cuteninja/memoria-bundle": "dev-master"
   },
   "require-dev": {
     "doctrine/doctrine-bundle": "~1.3",
     "symfony/yaml": "~2.3",
     "symfony/validator": "~2.3",
     "phpunit/phpunit": "4.8.*",
-    "behat/symfony2-extension": "2.1.*",
-    "h4cc/alice-fixtures-bundle": "^0.5.1"
+    "behat/symfony2-extension": "2.1.*"
   },
   "autoload": {
     "psr-4": { "CuteNinja\\CommonBundle\\": "" }
