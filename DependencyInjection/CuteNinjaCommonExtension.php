@@ -19,10 +19,12 @@ class CuteNinjaCommonExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
-
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $env = $container->getParameter("kernel.environment");
+        if($env == 'dev') {
+            $loader->load('services_dev.yml');
+        }
     }
 }
