@@ -38,7 +38,7 @@
     "behat/symfony2-extension": "2.1.*"
   },
   "autoload": {
-    "psr-4": { "CuteNinja\\CommonBundle\\": "" }
+    "psr-4": { "CuteNinja\\ParabolaBundle\\": "" }
   },
   "license": "proprietary"
 }
