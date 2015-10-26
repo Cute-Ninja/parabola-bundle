@@ -1,11 +1,11 @@
 <?php
 
-namespace CuteNinja\CommonBundle\Tests\Feature\Context\Traits;
+namespace CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits;
 
 /**
  * Class GivenTrait
  *
- * @package CuteNinja\CommonBundle\Tests\Feature\Context\Traits
+ * @package CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits
  */
 trait ThenTrait
 {

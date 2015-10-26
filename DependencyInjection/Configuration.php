@@ -1,6 +1,6 @@
 <?php
 
-namespace CuteNinja\CommonBundle\DependencyInjection;
+namespace CuteNinja\ParabolaBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

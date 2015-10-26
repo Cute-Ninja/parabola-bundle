@@ -1,11 +1,11 @@
 <?php
 
-namespace CuteNinja\CommonBundle\Tests\Feature\SerializationSchema;
+namespace CuteNinja\ParabolaBundle\Tests\Feature\SerializationSchema;
 
 /**
  * Interface SerializationSchemaInterface
  *
- * @package CuteNinja\CommonBundle\Tests\Feature\SerializationSchema
+ * @package CuteNinja\ParabolaBundle\Tests\Feature\SerializationSchema
  */
 interface SerializationSchemaInterface
 {

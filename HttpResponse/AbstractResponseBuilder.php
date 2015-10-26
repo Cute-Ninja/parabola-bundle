@@ -1,6 +1,6 @@
 <?php
 
-namespace CuteNinja\CommonBundle\HttpResponse;
+namespace CuteNinja\ParabolaBundle\HttpResponse;
 
 use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\View\View;
@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Router;
 /**
  * Class AbstractResponseBuilder
  *
- * @package CuteNinja\CommonBundle\HttpResponse
+ * @package CuteNinja\ParabolaBundle\HttpResponse
  */
 abstract class AbstractResponseBuilder
 {

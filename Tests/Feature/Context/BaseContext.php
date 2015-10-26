@@ -1,22 +1,22 @@
 <?php
 
-namespace CuteNinja\CommonBundle\Tests\Feature\Context;
+namespace CuteNinja\ParabolaBundle\Tests\Feature\Context;
 
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Symfony2Extension\Context\KernelAwareContext;
 use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
-use CuteNinja\CommonBundle\Tests\Feature\Context\Traits\FixturesTrait;
-use CuteNinja\CommonBundle\Tests\Feature\Context\Traits\UtilsTrait;
-use CuteNinja\CommonBundle\Tests\Feature\Context\Traits\GivenTrait;
-use CuteNinja\CommonBundle\Tests\Feature\Context\Traits\ThenTrait;
+use CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits\FixturesTrait;
+use CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits\UtilsTrait;
+use CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits\GivenTrait;
+use CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits\ThenTrait;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 /**
  * Class BaseContext
  *
- * @package CuteNinja\CommonBundle\Tests\Feature\Context
+ * @package CuteNinja\ParabolaBundle\Tests\Feature\Context
  */
 abstract class BaseContext extends WebTestCase implements ContextInterface, SnippetAcceptingContext, KernelAwareContext
 {

@@ -1,11 +1,11 @@
 {
-  "name": "cuteninja/common-bundle",
+  "name": "cuteninja/parabola-bundle",
   "type": "symfony-bundle",
-  "description": "Common code for Cute-Ninja projects (API handler, etc)",
-  "homepage": "https://github.com/Cute-Ninja/common-bundle",
+  "description": "Common API code for Cute-Ninja projects (API handler, testing)",
+  "homepage": "https://github.com/Cute-Ninja/parabola-bundle",
   "keywords": [
     "api",
-    "common"
+    "testing"
   ],
   "authors": [
     {
@@ -25,7 +25,9 @@
     "incenteev/composer-parameter-handler": "~2.0",
     "jms/serializer-bundle": "1.0.*",
     "friendsofsymfony/rest-bundle": "1.7.*",
-    "knplabs/knp-paginator-bundle": "2.5.*"
+    "knplabs/knp-paginator-bundle": "2.5.*",
+
+
   },
   "require-dev": {
     "doctrine/doctrine-bundle": "~1.3",

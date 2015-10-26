@@ -1,6 +1,6 @@
 <?php
 
-namespace CuteNinja\CommonBundle\Controller;
+namespace CuteNinja\ParabolaBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Interface BaseControllerInterface
  *
- * @package CuteNinja\CommonBundle\Controller
+ * @package CuteNinja\ParabolaBundle\Controller
  */
 interface APIControllerInterface
 {

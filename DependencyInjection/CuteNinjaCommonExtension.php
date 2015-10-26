@@ -1,6 +1,6 @@
 <?php
 
-namespace CuteNinja\CommonBundle\DependencyInjection;
+namespace CuteNinja\ParabolaBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
