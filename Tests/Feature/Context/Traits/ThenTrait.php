@@ -87,7 +87,9 @@ trait ThenTrait
                 $this->checkAnArrayOfKey($allowedKeys, $value);
             }
 
-            $this->assertTrue(in_array($key, $allowedKeys), "The key $key shouldn't be exposed.");
+            if(!is_numeric($key)) {
+                $this->assertTrue(in_array($key, $allowedKeys), "The key $key shouldn't be exposed.");
+            }
         }
     }
 }
