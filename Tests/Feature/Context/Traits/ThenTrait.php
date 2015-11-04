@@ -67,9 +67,9 @@ trait ThenTrait
     }
 
     /**
-     * @Then the response should be very quick
+     * @Then the response must be optimized
      */
-    public function theResponseShouldBeVeryQuick()
+    public function theResponseMustBeOptimized()
     {
         $profile = $this->getContainer()->get('profiler')->loadProfileFromResponse($this->response);
 
