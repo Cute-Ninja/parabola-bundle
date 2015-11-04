@@ -1,7 +1,7 @@
 {
   "name": "cuteninja/parabola-bundle",
   "type": "symfony-bundle",
-  "description": "Common API code for Cute-Ninja projects (API handler, testing)",
+  "description": "Common code handling API for Cute-Ninja projects (ResponseBuilder, Testing, ...)",
   "homepage": "https://github.com/Cute-Ninja/parabola-bundle",
   "keywords": [
     "api",
