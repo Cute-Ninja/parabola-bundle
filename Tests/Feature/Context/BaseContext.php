@@ -84,7 +84,7 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
      * @param $method
      * @param $uri
      */
-    private function requestApi($method, $uri)
+    public function requestApi($method, $uri)
     {
         $this->client->request($method, $uri);
         $this->response = $this->client->getResponse();
