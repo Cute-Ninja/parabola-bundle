@@ -74,13 +74,13 @@ trait ThenTrait
         $profile = $this->getContainer()->get('profiler')->loadProfileFromResponse($this->response);
 
         $this->assertLessThan(
-            5,
+            3,
             $profile->getCollector('db')->getQueryCount()
         );
 
         $this->assertLessThan(
             500,
-            $profile->getCollector('time')->getDuration()
+            $profile->getCollector('db')->getTime()
         );
     }
 
