@@ -67,6 +67,24 @@ trait ThenTrait
     }
 
     /**
+     * @Then the response should be very quick
+     */
+    public function theResponseShouldBeVeryQuick()
+    {
+        $profile = $this->getContainer()->get('profiler')->loadProfileFromResponse($this->response);
+
+        $this->assertLessThan(
+            5,
+            $profile->getCollector('db')->getQueryCount()
+        );
+
+        $this->assertLessThan(
+            500,
+            $profile->getCollector('time')->getDuration()
+        );
+    }
+
+    /**
      * @param array $allowedKeys
      */
     protected function theResponseBodyShouldContainTheDetailsOf(array $allowedKeys)
