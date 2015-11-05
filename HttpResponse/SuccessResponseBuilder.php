@@ -2,6 +2,7 @@
 
 namespace CuteNinja\ParabolaBundle\HttpResponse;
 
+use FOS\RestBundle\Context\Context;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandler;
 use Knp\Component\Pager\Pagination\PaginationInterface;
@@ -41,11 +42,11 @@ class SuccessResponseBuilder extends AbstractResponseBuilder
 
         $view = View::create($object, Response::HTTP_OK);
 
-        $context = new SerializationContext();
+        $context = new Context();
         $context->setSerializeNull(true);
 
         if (!empty($serializationGroups)) {
-            $context->setGroups($serializationGroups);
+            $context->addGroups($serializationGroups);
         }
 
         $view->setSerializationContext($context);
@@ -84,11 +85,11 @@ class SuccessResponseBuilder extends AbstractResponseBuilder
         }
 
         $view    = View::create($pagination->getItems(), Response::HTTP_OK, $headers);
-        $context = new SerializationContext();
+        $context = new Context();
         $context->setSerializeNull(true);
 
         if (!empty($serializationGroups)) {
-            $context->setGroups($serializationGroups);
+            $context->addGroups($serializationGroups);
         }
 
         $view->setSerializationContext($context);
