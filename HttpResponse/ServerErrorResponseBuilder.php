@@ -3,12 +3,10 @@
 namespace CuteNinja\ParabolaBundle\HttpResponse;
 
 use Exception;
-use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandler;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\Routing\Router;
 
 /**
  * Class ServerErrorResponseBuilder
@@ -35,7 +33,7 @@ class ServerErrorResponseBuilder extends AbstractResponseBuilder
         if ($e instanceof HttpException) {
             $e = new Exception($e->getMessage(), $e->getStatusCode());
         }
-        $code    = $e->getCode() ?: Codes::HTTP_INTERNAL_SERVER_ERROR;
+        $code    = $e->getCode() ?: Response::HTTP_INTERNAL_SERVER_ERROR;
         $message = $e->getMessage() ?: null;
 
         return $this->handle(View::create($message, $code));
@@ -46,6 +44,6 @@ class ServerErrorResponseBuilder extends AbstractResponseBuilder
      */
     public function notImplemented()
     {
-        return $this->getServerErrorResponseBuilder()->exception(new HttpException(Codes::HTTP_NOT_IMPLEMENTED));
+        return $this->getServerErrorResponseBuilder()->exception(new HttpException(Response::HTTP_NOT_IMPLEMENTED));
     }
 }

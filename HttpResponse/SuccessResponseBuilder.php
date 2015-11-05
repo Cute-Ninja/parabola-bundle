@@ -2,7 +2,6 @@
 
 namespace CuteNinja\ParabolaBundle\HttpResponse;
 
-use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandler;
 use Knp\Component\Pager\Pagination\PaginationInterface;
@@ -40,7 +39,7 @@ class SuccessResponseBuilder extends AbstractResponseBuilder
             return $this->getClientErrorResponseBuilder()->notFound();
         }
 
-        $view = View::create($object, Codes::HTTP_OK);
+        $view = View::create($object, Response::HTTP_OK);
 
         $context = new SerializationContext();
         $context->setSerializeNull(true);
@@ -69,7 +68,7 @@ class SuccessResponseBuilder extends AbstractResponseBuilder
         array $serializationGroups = array()
     ) {
         if (empty($pagination->getItems())) {
-            return $this->handle(View::create(null, Codes::HTTP_NO_CONTENT));
+            return $this->handle(View::create(null, Response::HTTP_NO_CONTENT));
         }
 
         $paginationData = $pagination->getPaginationData();
@@ -84,7 +83,7 @@ class SuccessResponseBuilder extends AbstractResponseBuilder
             $headers['X-Total-Count'] = $paginationData['totalCount'];
         }
 
-        $view    = View::create($pagination->getItems(), Codes::HTTP_OK, $headers);
+        $view    = View::create($pagination->getItems(), Response::HTTP_OK, $headers);
         $context = new SerializationContext();
         $context->setSerializeNull(true);
 
@@ -105,7 +104,7 @@ class SuccessResponseBuilder extends AbstractResponseBuilder
      */
     public function postSuccess($resourceRouteName = '', array $parameters = [])
     {
-        return $this->handle(View::createRouteRedirect($resourceRouteName, $parameters, Codes::HTTP_CREATED));
+        return $this->handle(View::createRouteRedirect($resourceRouteName, $parameters, Response::HTTP_CREATED));
     }
 
     /**
@@ -113,7 +112,7 @@ class SuccessResponseBuilder extends AbstractResponseBuilder
      */
     public function putSuccess()
     {
-        return $this->handle(View::create(null, Codes::HTTP_NO_CONTENT));
+        return $this->handle(View::create(null, Response::HTTP_NO_CONTENT));
     }
 
     /**
@@ -121,7 +120,7 @@ class SuccessResponseBuilder extends AbstractResponseBuilder
      */
     public function deleteSuccess()
     {
-        return $this->handle(View::create(null, Codes::HTTP_NO_CONTENT));
+        return $this->handle(View::create(null, Response::HTTP_NO_CONTENT));
     }
 
     /**

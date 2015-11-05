@@ -2,11 +2,9 @@
 
 namespace CuteNinja\ParabolaBundle\HttpResponse;
 
-use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandler;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Router;
 
 /**
  * Class AbstractResponseBuilder
@@ -35,7 +33,7 @@ abstract class AbstractResponseBuilder
      */
     public function ok($data = null)
     {
-        $code = $data ? Codes::HTTP_OK : Codes::HTTP_NO_CONTENT;
+        $code = $data ? Response::HTTP_OK : Response::HTTP_NO_CONTENT;
 
         return $this->handle(View::create(null, $code));
     }

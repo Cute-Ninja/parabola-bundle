@@ -2,11 +2,9 @@
 
 namespace CuteNinja\ParabolaBundle\HttpResponse;
 
-use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\View\ViewHandler;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\Routing\Router;
 
 /**
  * Class ClientErrorResponseBuilder
@@ -28,7 +26,7 @@ class ClientErrorResponseBuilder extends AbstractResponseBuilder
      */
     public function forbidden()
     {
-        return $this->getServerErrorResponseBuilder()->exception(new HttpException(Codes::HTTP_FORBIDDEN));
+        return $this->getServerErrorResponseBuilder()->exception(new HttpException(Response::HTTP_FORBIDDEN));
     }
 
     /**
@@ -36,7 +34,7 @@ class ClientErrorResponseBuilder extends AbstractResponseBuilder
      */
     public function notFound()
     {
-        return $this->getServerErrorResponseBuilder()->exception(new HttpException(Codes::HTTP_NOT_FOUND));
+        return $this->getServerErrorResponseBuilder()->exception(new HttpException(Response::HTTP_NOT_FOUND));
     }
 
     /**
@@ -46,6 +44,6 @@ class ClientErrorResponseBuilder extends AbstractResponseBuilder
      */
     public function badRequest($message)
     {
-        return $this->getServerErrorResponseBuilder()->exception(new HttpException(Codes::HTTP_BAD_REQUEST, $message));
+        return $this->getServerErrorResponseBuilder()->exception(new HttpException(Response::HTTP_BAD_REQUEST, $message));
     }
 }
