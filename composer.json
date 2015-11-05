@@ -25,7 +25,6 @@
     "incenteev/composer-parameter-handler": "~2.0",
     "jms/serializer-bundle": "~1.0",
     "friendsofsymfony/rest-bundle": "~1.7|~2.0",
-    "nelmio/api-doc-bundle": "~2.9",
     "knplabs/knp-paginator-bundle": "~2.5",
 
     "cuteninja/memoria-bundle": "dev-master"
