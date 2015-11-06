@@ -20,7 +20,7 @@
     "sensio/framework-extra-bundle": "~3.0",
     "incenteev/composer-parameter-handler": "~2.0",
     "jms/serializer-bundle": "~1.0",
-    "friendsofsymfony/rest-bundle": "dev-master",
+    "friendsofsymfony/rest-bundle": "~1.7",
     "knplabs/knp-paginator-bundle": "~2.5"
   },
   "require-dev": {
