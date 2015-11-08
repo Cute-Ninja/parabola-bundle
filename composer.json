@@ -19,7 +19,7 @@
     "sensio/distribution-bundle": "~4.0|~5.0",
     "sensio/framework-extra-bundle": "~3.0",
     "incenteev/composer-parameter-handler": "~2.0",
-    "friendsofsymfony/rest-bundle": "~1.7",
+    "friendsofsymfony/rest-bundle": "dev-master",
     "knplabs/knp-paginator-bundle": "~2.5"
   },
   "require-dev": {
