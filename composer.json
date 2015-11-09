@@ -24,7 +24,7 @@
   },
   "require-dev": {
     "symfony/yaml": "~2.3",
-    "phpunit/phpunit": "~5.0",
+    "phpunit/phpunit": "4.8.*",
     "behat/symfony2-extension": "~2.1"
   },
   "autoload": {
