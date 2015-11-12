@@ -4,6 +4,7 @@ namespace CuteNinja\ParabolaBundle\HttpResponse;
 
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandler;
+use JMS\Serializer\SerializationContext;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -83,11 +84,11 @@ class SuccessResponseBuilder extends AbstractResponseBuilder
         }
 
         $view    = View::create($pagination->getItems(), Response::HTTP_OK, $headers);
-        $context = new Context();
+        $context = new SerializationContext();
         $context->setSerializeNull(true);
 
         if (!empty($serializationGroups)) {
-            $context->addGroups($serializationGroups);
+            $context->setGroups($serializationGroups);
         }
 
         $view->setSerializationContext($context);
