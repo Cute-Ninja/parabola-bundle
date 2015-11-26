@@ -2,7 +2,10 @@
 
 namespace CuteNinja\ParabolaBundle\HttpResponse;
 
+use CuteNinja\ParabolaBundle\Form\Error\ApiFormError;
 use FOS\RestBundle\View\ViewHandler;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
@@ -45,5 +48,19 @@ class ClientErrorResponseBuilder extends AbstractResponseBuilder
     public function badRequest($message)
     {
         return $this->getServerErrorResponseBuilder()->exception(new HttpException(Response::HTTP_BAD_REQUEST, $message));
+    }
+
+    /**
+     * @param FormInterface $form
+     *
+     * @return JsonResponse
+     */
+    public function jsonResponseFormError(FormInterface $form)
+    {
+        $apiFormError = new ApiFormError();
+
+        $data = $apiFormError->getFormErrorsAsFormattedArray($form);
+
+        return new JsonResponse($data, Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 }
