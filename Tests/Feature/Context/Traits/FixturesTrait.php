@@ -21,10 +21,10 @@ trait FixturesTrait
      */
     public function beforeScenario()
     {
-        $process = new Process("php app/console doctrine:schema:create --env=test");
+        $process = new Process("php bin/console doctrine:schema:create --env=test");
         $process->run();
 
-        $process = new Process("php app/console cute_ninja:fixture:load --env=test");
+        $process = new Process("php bin/console cute_ninja:fixture:load --env=test");
         $process->run();
     }
 
@@ -33,8 +33,7 @@ trait FixturesTrait
      */
     public function afterScenario()
     {
-        $process = new Process("php app/console doctrine:schema:drop --force --env=test");
+        $process = new Process("php bin/console doctrine:schema:drop --force --env=test");
         $process->run();
     }
-
 }
