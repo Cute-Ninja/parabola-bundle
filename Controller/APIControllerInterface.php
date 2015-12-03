@@ -20,28 +20,33 @@ interface APIControllerInterface
     public function listAction(Request $request);
 
     /**
+     * @param Request $request
      * @param integer $id
      *
      * @return Response
      */
-    public function getAction($id);
+    public function getAction(Request $request, $id);
 
     /**
+     * @param Request $request
+     *
      * @return Response
      */
-    public function postAction();
+    public function postAction(Request $request);
 
     /**
+     * @param Request $request
      * @param integer $id
      *
      * @return Response
      */
-    public function putAction($id);
+    public function putAction(Request $request, $id);
 
     /**
+     * @param Request $request
      * @param integer $id
      *
      * @return Response
      */
-    public function deleteAction($id);
+    public function deleteAction(Request $request, $id);
 }
