@@ -7,3 +7,8 @@ To be able to use "the response must be optimized" you need to enable the profil
 profiler:
     enabled: true
 ```
+
+To enable API wrapping and access the display of the symfony2 profilter, add the following to your parameters.yml
+```yaml
+wrap_api_response: true
+```
