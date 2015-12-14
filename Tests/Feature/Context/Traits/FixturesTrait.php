@@ -17,9 +17,9 @@ trait FixturesTrait
     private $fixtures;
 
     /**
-     * @BeforeScenario
+     * @BeforeSuite
      */
-    public function beforeScenario()
+    public static function beforeSuite()
     {
         $process = new Process("php bin/console doctrine:schema:create --env=test");
         $process->setTimeout(3600);
@@ -31,11 +31,19 @@ trait FixturesTrait
     }
 
     /**
-     * @AfterScenario
+     * @AfterScenario @regenerateDB
      */
-    public function afterScenario()
+    public function regenerateDBAfterScenario()
     {
         $process = new Process("php bin/console doctrine:schema:drop --force --env=test");
+        $process->setTimeout(3600);
+        $process->run();
+
+        $process = new Process("php bin/console doctrine:schema:create --env=test");
+        $process->setTimeout(3600);
+        $process->run();
+
+        $process = new Process("php bin/console cute_ninja:fixture:load --env=test");
         $process->setTimeout(3600);
         $process->run();
     }
