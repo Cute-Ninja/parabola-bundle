@@ -74,7 +74,7 @@ trait ThenTrait
         $profile = $this->getContainer()->get('profiler')->loadProfileFromResponse($this->response);
 
         $this->assertLessThan(
-            3,
+            5,
             $profile->getCollector('db')->getQueryCount()
         );
 
