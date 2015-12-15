@@ -1,5 +1,8 @@
 # parabola-bundle
 
+This bundle provide tools to handle Rest API.
+It includes response builders (Success, ServerError, Client Error) and functionnal testing (using Behat).
+
 ## Configuration
 To be able to use "the response must be optimized" you need to enable the profiler in config_test.yml
 
