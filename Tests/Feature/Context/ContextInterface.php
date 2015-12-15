@@ -22,14 +22,16 @@ interface ContextInterface
 
     /**
      * @param $apiName
+     * @param $params
      */
-    public function iWantToCreate($apiName);
+    public function iWantToCreate($apiName, $params);
 
     /**
      * @param $apiName
      * @param $id
+     * @param $params
      */
-    public function iWantToEdit($apiName, $id);
+    public function iWantToEdit($apiName, $id, $params);
 
     /**
      * @param $apiName
