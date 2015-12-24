@@ -45,6 +45,14 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
     /**
      * {@inheritdoc}
      */
+    protected static function createKernel(array $options = [])
+    {
+        return new \AppKernel('test', false);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function iWantToList($apiName)
     {
         $this->requestApi('GET', '/api/' . $apiName);
