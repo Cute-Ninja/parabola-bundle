@@ -19,11 +19,18 @@ abstract class AbstractResponseBuilder
     private $viewHandler;
 
     /**
-     * @param ViewHandler $viewHandler
+     * @var string[]
      */
-    public function __construct(ViewHandler $viewHandler)
+    private $allowedOrigins;
+
+    /**
+     * @param ViewHandler $viewHandler
+     * @param array       $allowedOrigins
+     */
+    public function __construct(ViewHandler $viewHandler, array $allowedOrigins)
     {
-        $this->viewHandler = $viewHandler;
+        $this->viewHandler    = $viewHandler;
+        $this->allowedOrigins = $allowedOrigins;
     }
 
     /**
@@ -45,6 +52,10 @@ abstract class AbstractResponseBuilder
      */
     protected function handle(View $view)
     {
+        $headers = array_merge($view->getHeaders(), $this->allowedOrigins);
+
+        $view->setHeaders($headers);
+
         return $this->viewHandler->handle($view);
     }
 
