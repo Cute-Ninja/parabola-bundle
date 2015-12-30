@@ -91,6 +91,15 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
     }
 
     /**
+     * @param string   $apiName
+     * @param string[] $params
+     */
+    public function iWantToBatchDelete($apiName, $params = [])
+    {
+        $this->requestApi('DELETE', '/api/' . $apiName, $params);
+    }
+
+    /**
      * @param $method
      * @param $uri
      */
