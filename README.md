@@ -19,7 +19,7 @@ cute_ninja_parabola:
 ```
 
 And in your paramaters.yml define cute_ninja_parabola_allowed_origins with the url of your API. 
-The parameter is an array to allow you to have multi source allowed.
+The parameter is an array to allow you to have multi sources allowed.
 
 For exemple:
 ```yaml
