@@ -17,14 +17,6 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 class ClientErrorResponseBuilder extends AbstractResponseBuilder
 {
     /**
-     * @param ViewHandler $viewHandler
-     */
-    public function __construct(ViewHandler $viewHandler)
-    {
-        parent::__construct($viewHandler);
-    }
-
-    /**
      * @return Response
      */
     public function forbidden()

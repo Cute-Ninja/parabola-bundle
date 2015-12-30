@@ -18,14 +18,6 @@ use Symfony\Component\Routing\Router;
 class SuccessResponseBuilder extends AbstractResponseBuilder
 {
     /**
-     * @param ViewHandler $viewHandler
-     */
-    public function __construct(ViewHandler $viewHandler)
-    {
-        parent::__construct($viewHandler);
-    }
-
-    /**
      * @param mixed $object
      * @param array $serializationGroups
      *

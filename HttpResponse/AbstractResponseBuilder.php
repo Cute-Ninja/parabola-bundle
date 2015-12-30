@@ -52,9 +52,7 @@ abstract class AbstractResponseBuilder
      */
     protected function handle(View $view)
     {
-        $headers = array_merge($view->getHeaders(), $this->allowedOrigins);
-
-        $view->setHeaders($headers);
+        $view->setHeader('Access-Control-Allow-Origin', $this->allowedOrigins);
 
         return $this->viewHandler->handle($view);
     }
@@ -64,7 +62,7 @@ abstract class AbstractResponseBuilder
      */
     protected function getSuccessResponseBuilder()
     {
-        return new SuccessResponseBuilder($this->viewHandler);
+        return new SuccessResponseBuilder($this->viewHandler, $this->allowedOrigins);
     }
 
     /**
@@ -72,7 +70,7 @@ abstract class AbstractResponseBuilder
      */
     protected function getClientErrorResponseBuilder()
     {
-        return new ClientErrorResponseBuilder($this->viewHandler);
+        return new ClientErrorResponseBuilder($this->viewHandler, $this->allowedOrigins);
     }
 
     /**
@@ -80,6 +78,6 @@ abstract class AbstractResponseBuilder
      */
     protected function getServerErrorResponseBuilder()
     {
-        return new ServerErrorResponseBuilder($this->viewHandler);
+        return new ServerErrorResponseBuilder($this->viewHandler, $this->allowedOrigins);
     }
 }

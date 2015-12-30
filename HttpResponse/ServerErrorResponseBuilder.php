@@ -16,14 +16,6 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 class ServerErrorResponseBuilder extends AbstractResponseBuilder
 {
     /**
-     * @param ViewHandler $viewHandler
-     */
-    public function __construct(ViewHandler $viewHandler)
-    {
-        parent::__construct($viewHandler);
-    }
-
-    /**
      * @param Exception $e
      *
      * @return Response
