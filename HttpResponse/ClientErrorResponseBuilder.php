@@ -53,6 +53,6 @@ class ClientErrorResponseBuilder extends AbstractResponseBuilder
 
         $data = $apiFormError->getFormErrorsAsFormattedArray($form);
 
-        return new JsonResponse($data, Response::HTTP_UNPROCESSABLE_ENTITY);
+        return $this->handle(View::create($data, Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 }
