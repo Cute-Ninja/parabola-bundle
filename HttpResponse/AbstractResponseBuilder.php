@@ -19,18 +19,11 @@ abstract class AbstractResponseBuilder
     private $viewHandler;
 
     /**
-     * @var string[]
-     */
-    private $allowedOrigins;
-
-    /**
      * @param ViewHandler $viewHandler
-     * @param array       $allowedOrigins
      */
-    public function __construct(ViewHandler $viewHandler, array $allowedOrigins)
+    public function __construct(ViewHandler $viewHandler)
     {
         $this->viewHandler    = $viewHandler;
-        $this->allowedOrigins = $allowedOrigins;
     }
 
     /**
@@ -52,8 +45,6 @@ abstract class AbstractResponseBuilder
      */
     protected function handle(View $view)
     {
-        $view->setHeader('Access-Control-Allow-Origin', $this->allowedOrigins);
-
         return $this->viewHandler->handle($view);
     }
 
@@ -62,7 +53,7 @@ abstract class AbstractResponseBuilder
      */
     protected function getSuccessResponseBuilder()
     {
-        return new SuccessResponseBuilder($this->viewHandler, $this->allowedOrigins);
+        return new SuccessResponseBuilder($this->viewHandler);
     }
 
     /**
@@ -70,7 +61,7 @@ abstract class AbstractResponseBuilder
      */
     protected function getClientErrorResponseBuilder()
     {
-        return new ClientErrorResponseBuilder($this->viewHandler, $this->allowedOrigins);
+        return new ClientErrorResponseBuilder($this->viewHandler);
     }
 
     /**
@@ -78,6 +69,6 @@ abstract class AbstractResponseBuilder
      */
     protected function getServerErrorResponseBuilder()
     {
-        return new ServerErrorResponseBuilder($this->viewHandler, $this->allowedOrigins);
+        return new ServerErrorResponseBuilder($this->viewHandler);
     }
 }

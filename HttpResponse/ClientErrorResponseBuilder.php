@@ -3,6 +3,7 @@
 namespace CuteNinja\ParabolaBundle\HttpResponse;
 
 use CuteNinja\ParabolaBundle\Form\Error\ApiFormError;
+use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandler;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -53,6 +54,6 @@ class ClientErrorResponseBuilder extends AbstractResponseBuilder
 
         $data = $apiFormError->getFormErrorsAsFormattedArray($form);
 
-        return new JsonResponse($data, Response::HTTP_UNPROCESSABLE_ENTITY);
+        return $this->handle(View::create($data, Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 }
