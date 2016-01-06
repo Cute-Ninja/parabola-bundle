@@ -20,14 +20,6 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('cute_ninja_parabola');
 
-        $rootNode
-            ->children()
-                ->arrayNode('allow_origin')
-                    ->isRequired()
-                    ->prototype('scalar')->end()
-                ->end()
-            ->end();
-
         return $treeBuilder;
     }
 }

@@ -22,8 +22,6 @@ class CuteNinjaParabolaExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('cute_ninja_parabola.allow_origin', $config['allow_origin']);
-
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
