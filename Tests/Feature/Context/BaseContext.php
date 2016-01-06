@@ -69,17 +69,17 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
     /**
      * {@inheritdoc}
      */
-    public function iWantToCreate($apiName, $params = [])
+    public function iWantToCreate($apiName, $params = [], $files = [])
     {
-        $this->requestApi('POST', '/api/' . $apiName, $params);
+        $this->requestApi('POST', '/api/' . $apiName, $params, $files);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function iWantToEdit($apiName, $id, $params = [])
+    public function iWantToEdit($apiName, $id, $params = [], $files = [])
     {
-        $this->requestApi('PUT', '/api/' . $apiName . '/' . $id, $params);
+        $this->requestApi('PUT', '/api/' . $apiName . '/' . $id, $params, $files);
     }
 
     /**
@@ -103,9 +103,10 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
      * @param $method
      * @param $uri
      */
-    public function requestApi($method, $uri, $params = [])
+    public function requestApi($method, $uri, $params = [], $files = [])
     {
-        $this->client->request($method, $uri, $params);
+        $this->client->request($method, $uri, $params, $files);
+
         $this->response = $this->client->getResponse();
     }
 
