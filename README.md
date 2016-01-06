@@ -11,13 +11,6 @@ profiler:
     enabled: true
 ```
 
-To allow the front-end to read the content of your response you have to add in config.yml
-
-```yaml
-cute_ninja_parabola:
-    allow_origin: %cute_ninja_parabola_allowed_origins%
-```
-
 And in your paramaters.yml define cute_ninja_parabola_allowed_origins with the url of your API. 
 The parameter is an array to allow you to have multi sources allowed.
 
