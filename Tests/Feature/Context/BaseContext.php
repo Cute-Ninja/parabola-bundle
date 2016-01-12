@@ -160,12 +160,13 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
                 if (preg_match_all('/\[([a-zA-Z0-9]*)\]/', $key, $valueMatches)) {
                     $keyValues = array_reverse($valueMatches[1]);
 
-                    foreach ($keyValues as $index => $keyValue) {
-                        $value = [$keyValue ?: $index => $value];
+                    foreach ($keyValues as $keyValue) {
+                        // array_merge_recursive does not merge integer key so we add a prefix that we delete later
+                        $value = ($keyValue != "" ? ['_prefix_'.$keyValue => $value] : [$value]);
                     }
 
                     if (isset($result[$newKey]) && is_array($result[$newKey])) {
-                        $value = array_merge($result[$newKey], $value);
+                        $value = array_merge_recursive($result[$newKey], $value);
                     }
                 }
 
@@ -175,6 +176,28 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
             $result[$key] = $value;
         }
 
+        $result = $this->deleteKeyPrefixRecursively($result);
+
         return $result;
+    }
+
+    /**
+     * @param $array
+     */
+    private function deleteKeyPrefixRecursively($array)
+    {
+        $newArray = [];
+
+        foreach ($array as $key => $value) {
+            $newKey = str_replace('_prefix_', '', $key);
+
+            if (is_array($value)) {
+                $value = $this->deleteKeyPrefixRecursively($value);
+            }
+
+            $newArray[$newKey] = $value;
+        }
+
+        return $newArray;
     }
 }
