@@ -11,6 +11,15 @@ profiler:
     enabled: true
 ```
 
+And in your paramaters.yml define cute_ninja_parabola_allowed_origins with the url of your API. 
+The parameter is an array to allow you to have multi sources allowed.
+
+For exemple:
+```yaml
+cute_ninja_parabola_allowed_origins: 
+    - 'http://api.my-application.com'
+```
+
 To enable API wrapping and access the display of the symfony2 profilter, add the following to your parameters.yml
 ```yaml
 wrap_api_response: true

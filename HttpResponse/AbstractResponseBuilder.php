@@ -23,7 +23,7 @@ abstract class AbstractResponseBuilder
      */
     public function __construct(ViewHandler $viewHandler)
     {
-        $this->viewHandler = $viewHandler;
+        $this->viewHandler    = $viewHandler;
     }
 
     /**
