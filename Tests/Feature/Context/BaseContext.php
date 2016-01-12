@@ -151,14 +151,24 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
             $key   = array_shift($row);
             $value = (1 == count($row)) ? $row[0] : $row;
 
-            if (preg_match('/([a-zA-Z]*)\[([a-zA-Z]*)\]/', $key, $matches)) {
-                $key      = $matches[1];
-                $arrayKey = $matches[2] ?: $index;
-                $value    = [$arrayKey => $value];
+            // if key is an array
+            if (preg_match('/([a-zA-Z]*)\[[a-zA-Z0-9]*\]/', $key, $keyMatches)) {
+                $newKey = $keyMatches[1];
 
-                if (isset($result[$key]) && is_array($result[$key])) {
-                    $value = array_merge($result[$key], $value);
+                // for multiple dimensions array
+                if (preg_match_all('/\[([a-zA-Z0-9]*)\]/', $key, $valueMatches)) {
+                    $keyValues = array_reverse($valueMatches[1]);
+
+                    foreach ($keyValues as $index => $keyValue) {
+                        $value = [$keyValue ?: $index => $value];
+                    }
+
+                    if (isset($result[$newKey]) && is_array($result[$newKey])) {
+                        $value = array_merge($result[$newKey], $value);
+                    }
                 }
+
+                $key = $newKey;
             }
 
             $result[$key] = $value;
