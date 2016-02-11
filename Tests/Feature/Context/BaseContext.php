@@ -53,9 +53,9 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
     /**
      * {@inheritdoc}
      */
-    public function iWantToList($apiName)
+    public function iWantToList($apiName, $params = [])
     {
-        $this->requestApi('GET', '/api/' . $apiName);
+        $this->requestApi('GET', '/api/' . $apiName, $params);
     }
 
     /**
