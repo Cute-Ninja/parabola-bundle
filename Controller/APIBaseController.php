@@ -77,6 +77,6 @@ abstract class APIBaseController extends FOSRestController implements APIControl
      */
     protected function getLimitForPagination(Request $request)
     {
-        return $request->get('limit', self::PAGINATION_LIMIT_DEFAULT);
+        return $request->get('itemPerPage', self::PAGINATION_LIMIT_DEFAULT);
     }
 }

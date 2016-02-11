@@ -35,6 +35,7 @@ class SuccessResponseBuilder extends AbstractResponseBuilder
 
         $context = new SerializationContext();
         $context->setSerializeNull(true);
+        $context->enableMaxDepthChecks();
 
         if (!empty($serializationGroups)) {
             $context->setGroups($serializationGroups);
@@ -78,6 +79,7 @@ class SuccessResponseBuilder extends AbstractResponseBuilder
         $view    = View::create($pagination->getItems(), Response::HTTP_OK, $headers);
         $context = new SerializationContext();
         $context->setSerializeNull(true);
+        $context->enableMaxDepthChecks();
 
         if (!empty($serializationGroups)) {
             $context->setGroups($serializationGroups);
