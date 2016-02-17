@@ -71,14 +71,14 @@ trait ThenTrait
      */
     public function theResponseMustBeOptimized()
     {
-        $profile = $this->getContainer()->get('profiler')->loadProfileFromResponse($this->response);
+        $profile = $this->client->getProfile();
 
-        $this->assertLessThan(
+        $this->assertLessThanOrEqual(
             5,
             $profile->getCollector('db')->getQueryCount()
         );
 
-        $this->assertLessThan(
+        $this->assertLessThanOrEqual(
             500,
             $profile->getCollector('db')->getTime()
         );
