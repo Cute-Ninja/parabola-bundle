@@ -1,10 +1,10 @@
 services:
     cute_ninja.response_builder.success:
         class: CuteNinja\ParabolaBundle\HttpResponse\SuccessResponseBuilder
-        arguments: [@fos_rest.view_handler]
+        arguments: ["@fos_rest.view_handler"]
     cute_ninja.response_builder.client_error:
         class: CuteNinja\ParabolaBundle\HttpResponse\ClientErrorResponseBuilder
-        arguments: [@fos_rest.view_handler]
+        arguments: ["@fos_rest.view_handler"]
     cute_ninja.response_builder.server_error:
         class: CuteNinja\ParabolaBundle\HttpResponse\ServerErrorResponseBuilder
-        arguments: [@fos_rest.view_handler]
+        arguments: ["@fos_rest.view_handler"]
