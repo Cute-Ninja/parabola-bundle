@@ -41,6 +41,13 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
     protected $response;
 
     /**
+     * Optimize DB load by triggering it after usage of "@regenerateDB"
+     *
+     * @AfterScenario @regenerateDB
+     */
+    abstract public function regenerateDBAfterScenario();
+
+    /**
      * {@inheritdoc}
      */
     protected static function createKernel(array $options = [])
