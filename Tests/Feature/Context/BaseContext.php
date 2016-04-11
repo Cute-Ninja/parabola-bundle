@@ -8,7 +8,6 @@ use Behat\Symfony2Extension\Context\KernelAwareContext;
 use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
-use CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits\FixturesTrait;
 use CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits\UtilsTrait;
 use CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits\GivenTrait;
 use CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits\ThenTrait;
@@ -23,7 +22,6 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 abstract class BaseContext extends WebTestCase implements ContextInterface, SnippetAcceptingContext, KernelAwareContext
 {
     use UtilsTrait;
-    use FixturesTrait;
     use GivenTrait;
     use ThenTrait;
 
@@ -53,9 +51,9 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
     /**
      * {@inheritdoc}
      */
-    public function iWantToList($apiName)
+    public function iWantToList($apiName, $params = [])
     {
-        $this->requestApi('GET', '/api/' . $apiName);
+        $this->requestApi('GET', '/api/' . $apiName, $params);
     }
 
     /**
