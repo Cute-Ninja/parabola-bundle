@@ -11,6 +11,12 @@ profiler:
     enabled: true
 ```
 
+and enable debug when instantiating the kernel
+
+```php
+new \AppKernel('test', true);
+```
+
 And in your paramaters.yml define cute_ninja_parabola_allowed_origins with the url of your API. 
 The parameter is an array to allow you to have multi sources allowed.
 
