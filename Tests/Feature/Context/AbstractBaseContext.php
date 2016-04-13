@@ -15,11 +15,11 @@ use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
- * Class BaseContext
+ * Class AbstractBaseContext
  *
  * @package CuteNinja\ParabolaBundle\Tests\Feature\Context
  */
-abstract class BaseContext extends WebTestCase implements ContextInterface, SnippetAcceptingContext, KernelAwareContext
+abstract class AbstractBaseContext extends WebTestCase implements ContextInterface, SnippetAcceptingContext, KernelAwareContext
 {
     use UtilsTrait;
     use GivenTrait;
@@ -187,7 +187,9 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
     }
 
     /**
-     * @param $array
+     * @param array $array
+     *
+     * @return array
      */
     private function deleteKeyPrefixRecursively($array)
     {
