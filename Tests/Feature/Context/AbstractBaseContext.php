@@ -40,6 +40,17 @@ abstract class AbstractBaseContext extends WebTestCase implements ContextInterfa
      */
     protected $response;
 
+    
+    /**
+     * @throws \LogicException
+     * 
+     * @BeforeSuite
+     */
+    public static function beforeSuite()
+    {
+        throw new \LogicException('This method need to be override in your BaseContext');
+    }
+
     /**
      * Optimize DB load by triggering it after usage of "@regenerateDB"
      *
