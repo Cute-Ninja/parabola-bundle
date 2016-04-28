@@ -8,7 +8,6 @@ use Behat\Symfony2Extension\Context\KernelAwareContext;
 use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
-use CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits\FixturesTrait;
 use CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits\UtilsTrait;
 use CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits\GivenTrait;
 use CuteNinja\ParabolaBundle\Tests\Feature\Context\Traits\ThenTrait;
@@ -16,14 +15,13 @@ use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
- * Class BaseContext
+ * Class AbstractBaseContext
  *
  * @package CuteNinja\ParabolaBundle\Tests\Feature\Context
  */
-abstract class BaseContext extends WebTestCase implements ContextInterface, SnippetAcceptingContext, KernelAwareContext
+abstract class AbstractBaseContext extends WebTestCase implements ContextInterface, SnippetAcceptingContext, KernelAwareContext
 {
     use UtilsTrait;
-    use FixturesTrait;
     use GivenTrait;
     use ThenTrait;
 
@@ -41,6 +39,24 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
      * @var Response
      */
     protected $response;
+
+    
+    /**
+     * @throws \LogicException
+     * 
+     * @BeforeSuite
+     */
+    public static function beforeSuite()
+    {
+        throw new \LogicException('This method need to be override in your BaseContext');
+    }
+
+    /**
+     * Optimize DB load by triggering it after usage of "@regenerateDB"
+     *
+     * @AfterScenario @regenerateDB
+     */
+    abstract public function regenerateDBAfterScenario();
 
     /**
      * {@inheritdoc}
@@ -182,7 +198,9 @@ abstract class BaseContext extends WebTestCase implements ContextInterface, Snip
     }
 
     /**
-     * @param $array
+     * @param array $array
+     *
+     * @return array
      */
     private function deleteKeyPrefixRecursively($array)
     {
