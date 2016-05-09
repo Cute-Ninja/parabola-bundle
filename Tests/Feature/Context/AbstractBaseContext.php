@@ -77,9 +77,9 @@ abstract class AbstractBaseContext extends WebTestCase implements ContextInterfa
     /**
      * {@inheritdoc}
      */
-    public function iWantToSeeTheDetails($apiName, $id)
+    public function iWantToSeeTheDetails($apiName, $id, $params = [])
     {
-        $this->requestApi('GET', '/api/' . $apiName . '/' . $id);
+        $this->requestApi('GET', '/api/' . $apiName . '/' . $id, $params);
     }
 
     /**
@@ -96,6 +96,25 @@ abstract class AbstractBaseContext extends WebTestCase implements ContextInterfa
     public function iWantToEdit($apiName, $id, $params = [], $files = [])
     {
         $this->requestApi('PUT', '/api/' . $apiName . '/' . $id, $params, $files);
+    }
+
+    /**
+     * @param string $apiName
+     * @param int    $id
+     * @param array  $params
+     */
+    public function iWantToPatch($apiName, $id, $params = [])
+    {
+        $this->requestApi('PATCH', '/api/' . $apiName . '/' . $id, $params);
+    }
+
+    /**
+     * @param string $apiName
+     * @param array  $params
+     */
+    public function iWantToBatchPatch($apiName, $params = [])
+    {
+        $this->requestApi('PATCH', '/api/' . $apiName, $params);
     }
 
     /**
@@ -169,11 +188,11 @@ abstract class AbstractBaseContext extends WebTestCase implements ContextInterfa
             $value = (1 == count($row)) ? $row[0] : $row;
 
             // if key is an array
-            if (preg_match('/([a-zA-Z]*)\[[a-zA-Z0-9]*\]/', $key, $keyMatches)) {
+            if (preg_match('/([a-zA-Z_]*)\[[a-zA-Z0-9_]*\]/', $key, $keyMatches)) {
                 $newKey = $keyMatches[1];
 
                 // for multiple dimensions array
-                if (preg_match_all('/\[([a-zA-Z0-9]*)\]/', $key, $valueMatches)) {
+                if (preg_match_all('/\[([a-zA-Z0-9_]*)\]/', $key, $valueMatches)) {
                     $keyValues = array_reverse($valueMatches[1]);
 
                     foreach ($keyValues as $keyValue) {
