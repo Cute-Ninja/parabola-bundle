@@ -4,6 +4,8 @@ namespace CuteNinja\ParabolaBundle\Form\Type;
 
 use Exception;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
@@ -35,7 +37,7 @@ class AbstractListFilterType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return '';
     }
@@ -48,7 +50,7 @@ class AbstractListFilterType extends AbstractType
         $builder->addEventListener(
             FormEvents::PRE_SUBMIT,
             function (FormEvent $event) {
-                $event->getForm()->add('_format', 'text', ['mapped' => false]);
+                $event->getForm()->add('_format', TextType::class, ['mapped' => false]);
             }
         );
 
@@ -60,7 +62,7 @@ class AbstractListFilterType extends AbstractType
      */
     protected function addPageField(FormBuilderInterface $builder)
     {
-        $builder->add('page', 'integer');
+        $builder->add('page', IntegerType::class);
     }
 
     /**
@@ -68,7 +70,7 @@ class AbstractListFilterType extends AbstractType
      */
     protected function addItemPerPageField(FormBuilderInterface $builder)
     {
-        $builder->add('itemPerPage', 'integer');
+        $builder->add('itemPerPage', IntegerType::class);
     }
 
     /**
@@ -76,7 +78,7 @@ class AbstractListFilterType extends AbstractType
      */
     protected function addOrderByField(FormBuilderInterface $builder)
     {
-        $builder->add('orderBy', 'text');
+        $builder->add('orderBy', TextType::class);
     }
 
     /**
