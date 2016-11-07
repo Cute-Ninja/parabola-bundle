@@ -42,6 +42,14 @@ trait ThenTrait
     }
 
     /**
+     * @Then the response should contain :value
+     */
+    public function responseShouldContain($value)
+    {
+        $this->assertContains($value, $this->response->getContent());
+    }
+
+    /**
      * @Then the value of the field :key is equal to :value
      *
      * @param string         $key
